@@ -1,0 +1,25 @@
+The dotnet runtime version is '10.0.14'.
+Formatting code files in workspace '/source/tests/ApprovalFlow.Tests/ApprovalFlow.Tests.csproj'.
+Loading workspace.
+Project ApprovalFlow.Tests is using configuration from '/source/tests/ApprovalFlow.Tests/obj/Debug/net10.0/ApprovalFlow.Tests.GeneratedMSBuildEditorConfig.editorconfig'.
+Project ApprovalFlow.Tests is using configuration from '/usr/share/dotnet/sdk/10.0.403/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_10_default.globalconfig'.
+Project ApprovalFlow is using configuration from '/source/src/ApprovalFlow/obj/Debug/net10.0/ApprovalFlow.GeneratedMSBuildEditorConfig.editorconfig'.
+Project ApprovalFlow is using configuration from '/usr/share/dotnet/sdk/10.0.403/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_10_default.globalconfig'.
+Complete in 1221ms.
+Determining formattable files.
+Skipping referenced project 'ApprovalFlow'.
+Complete in 95ms.
+Running formatters.
+Running Code Style analysis.
+Determining diagnostics...
+Running 9 analyzers on ApprovalFlow.Tests.
+Complete in 1377ms.
+Analysis complete in 1377ms.
+Running Analyzer Reference analysis.
+Determining diagnostics...
+Running 225 analyzers on ApprovalFlow.Tests.
+Complete in 242ms.
+Analysis complete in 242ms.
+Complete in 1922ms.
+Formatted 0 of 6 files.
+Format complete in 3239ms.

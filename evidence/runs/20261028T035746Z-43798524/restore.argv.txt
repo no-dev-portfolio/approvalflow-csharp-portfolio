@@ -1,0 +1,4 @@
+dotnet
+restore
+tests/ApprovalFlow.Tests
+--locked-mode

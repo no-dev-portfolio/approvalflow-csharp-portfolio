@@ -1,0 +1,108 @@
+{
+  "run_id": "20261028T035746Z-43798524",
+  "outcome": "passed",
+  "steps": [
+    {
+      "run_id": "20261028T035746Z-43798524",
+      "started_at": "2026-10-28T03:57:46.008626+00:00",
+      "ended_at": "2026-10-28T03:57:46.262698+00:00",
+      "exit_code": 0,
+      "command": [
+        "docker",
+        "compose",
+        "--project-directory",
+        "$PROJECT",
+        "--env-file",
+        "$ENV_FILE",
+        "-p",
+        "approvalflow-portfolio",
+        "up",
+        "-d",
+        "db"
+      ]
+    },
+    {
+      "run_id": "20261028T035746Z-43798524",
+      "started_at": "2026-10-28T03:57:46.264593+00:00",
+      "ended_at": "2026-10-28T03:58:10.704093+00:00",
+      "exit_code": 0,
+      "command": [
+        "docker",
+        "compose",
+        "--project-directory",
+        "$PROJECT",
+        "--env-file",
+        "$ENV_FILE",
+        "-p",
+        "approvalflow-portfolio",
+        "--profile",
+        "test",
+        "run",
+        "--rm",
+        "-e",
+        "VERIFY_RUN_ID=20261028T035746Z-43798524",
+        "-v",
+        "approvalflow-nuget:/root/.nuget/packages",
+        "tests",
+        "sh",
+        "scripts/verify-dotnet.sh"
+      ]
+    },
+    {
+      "run_id": "20261028T035746Z-43798524",
+      "started_at": "2026-10-28T03:58:10.708897+00:00",
+      "ended_at": "2026-10-28T03:58:10.806764+00:00",
+      "exit_code": 0,
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "scripts/check-audit.py",
+        "$PROJECT/evidence/runs/20261028T035746Z-43798524/dependency-audit.json"
+      ]
+    },
+    {
+      "run_id": "20261028T035746Z-43798524",
+      "started_at": "2026-10-28T03:58:10.807502+00:00",
+      "ended_at": "2026-10-28T03:58:11.132067+00:00",
+      "exit_code": 0,
+      "command": [
+        "docker",
+        "compose",
+        "--project-directory",
+        "$PROJECT",
+        "--env-file",
+        "$ENV_FILE",
+        "-p",
+        "approvalflow-portfolio",
+        "--profile",
+        "test",
+        "run",
+        "--rm",
+        "frontend"
+      ]
+    },
+    {
+      "run_id": "20261028T035746Z-43798524",
+      "started_at": "2026-10-28T03:58:11.136637+00:00",
+      "ended_at": "2026-10-28T03:58:11.402051+00:00",
+      "exit_code": 0,
+      "command": [
+        "docker",
+        "compose",
+        "--project-directory",
+        "$PROJECT",
+        "--env-file",
+        "$ENV_FILE",
+        "-p",
+        "approvalflow-portfolio",
+        "exec",
+        "-T",
+        "db",
+        "sh",
+        "-c",
+        "exec /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P \"$MSSQL_SA_PASSWORD\" -C -b -W -Q \"$1\"",
+        "sh",
+        "SET NOCOUNT ON; SELECT SYSUTCDATETIME() AS observed_at_utc; SELECT COUNT(*) AS remaining_test_databases FROM sys.databases WHERE LEFT(name,43) = N'ApprovalFlowTest_20261028T035746Z-43798524_'; SELECT name FROM sys.databases WHERE LEFT(name,43) = N'ApprovalFlowTest_20261028T035746Z-43798524_'; IF EXISTS(SELECT 1 FROM sys.databases WHERE LEFT(name,43) = N'ApprovalFlowTest_20261028T035746Z-43798524_') THROW 51001, 'Test databases remain', 1;"
+      ]
+    }
+  ]
+}

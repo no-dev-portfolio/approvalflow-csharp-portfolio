@@ -1,0 +1,7 @@
+dotnet
+list
+tests/ApprovalFlow.Tests
+package
+--include-transitive
+--format
+json

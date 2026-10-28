@@ -1,0 +1,8 @@
+dotnet
+list
+tests/ApprovalFlow.Tests
+package
+--vulnerable
+--include-transitive
+--format
+json

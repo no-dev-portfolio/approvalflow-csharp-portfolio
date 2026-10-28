@@ -1,0 +1,7 @@
+dotnet
+format
+tests/ApprovalFlow.Tests/ApprovalFlow.Tests.csproj
+--verify-no-changes
+--no-restore
+--verbosity
+diagnostic

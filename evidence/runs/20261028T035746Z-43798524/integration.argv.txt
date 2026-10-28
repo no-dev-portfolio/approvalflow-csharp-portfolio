@@ -1,0 +1,10 @@
+dotnet
+test
+tests/ApprovalFlow.Tests
+-c
+Release
+--no-restore
+--results-directory
+evidence/runs/20261028T035746Z-43798524
+--logger
+trx;LogFileName=integration-20261028T035746Z-43798524.trx

@@ -1,0 +1,7 @@
+dotnet
+format
+src/ApprovalFlow/ApprovalFlow.csproj
+--verify-no-changes
+--no-restore
+--verbosity
+diagnostic

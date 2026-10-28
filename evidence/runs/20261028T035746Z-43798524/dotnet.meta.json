@@ -1,0 +1,27 @@
+{
+  "run_id": "20261028T035746Z-43798524",
+  "started_at": "2026-10-28T03:57:46.264593+00:00",
+  "ended_at": "2026-10-28T03:58:10.704093+00:00",
+  "exit_code": 0,
+  "command": [
+    "docker",
+    "compose",
+    "--project-directory",
+    "$PROJECT",
+    "--env-file",
+    "$ENV_FILE",
+    "-p",
+    "approvalflow-portfolio",
+    "--profile",
+    "test",
+    "run",
+    "--rm",
+    "-e",
+    "VERIFY_RUN_ID=20261028T035746Z-43798524",
+    "-v",
+    "approvalflow-nuget:/root/.nuget/packages",
+    "tests",
+    "sh",
+    "scripts/verify-dotnet.sh"
+  ]
+}

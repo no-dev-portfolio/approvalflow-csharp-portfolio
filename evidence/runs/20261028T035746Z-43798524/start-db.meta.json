@@ -1,0 +1,19 @@
+{
+  "run_id": "20261028T035746Z-43798524",
+  "started_at": "2026-10-28T03:57:46.008626+00:00",
+  "ended_at": "2026-10-28T03:57:46.262698+00:00",
+  "exit_code": 0,
+  "command": [
+    "docker",
+    "compose",
+    "--project-directory",
+    "$PROJECT",
+    "--env-file",
+    "$ENV_FILE",
+    "-p",
+    "approvalflow-portfolio",
+    "up",
+    "-d",
+    "db"
+  ]
+}

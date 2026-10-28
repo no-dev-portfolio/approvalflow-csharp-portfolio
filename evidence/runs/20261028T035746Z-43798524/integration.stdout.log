@@ -1,0 +1,7 @@
+  ApprovalFlow -> /source/src/ApprovalFlow/bin/Release/net10.0/ApprovalFlow.dll
+  ApprovalFlow.Tests -> /source/tests/ApprovalFlow.Tests/bin/Release/net10.0/ApprovalFlow.Tests.dll
+Test run for /source/tests/ApprovalFlow.Tests/bin/Release/net10.0/ApprovalFlow.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+Results File: /source/evidence/runs/20261028T035746Z-43798524/integration-20261028T035746Z-43798524.trx
+
+Passed!  - Failed:     0, Passed:    40, Skipped:     0, Total:    40, Duration: 2 s - ApprovalFlow.Tests.dll (net10.0)
