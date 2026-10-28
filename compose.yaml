@@ -1,0 +1,42 @@
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest@sha256:cf8f0ab2ebe61feec2eed2629061a07d247f791c2a8ddda74a4ac9f06a291718
+    platform: linux/amd64
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: Developer
+      MSSQL_SA_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD in .env}
+    volumes: ["sql-data:/var/opt/mssql"]
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P \"$$MSSQL_SA_PASSWORD\" -C -Q 'SELECT 1' -b >/dev/null"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+      start_period: 30s
+  app:
+    build: .
+    ports: ["127.0.0.1:8790:8080"]
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      DemoPassword: ${DEMO_PASSWORD:?Set DEMO_PASSWORD in .env}
+      ConnectionStrings__Database: Server=db;Database=ApprovalFlow;User Id=sa;Password=${DB_PASSWORD};TrustServerCertificate=True
+    depends_on:
+      db: {condition: service_healthy}
+  tests:
+    image: mcr.microsoft.com/dotnet/sdk:10.0@sha256:de4fe90a98845d75910b9769662465c84de1a934665c431279d1382b2bddc02b
+    profiles: [test]
+    working_dir: /source
+    volumes: [".:/source"]
+    environment:
+      TEST_DATABASE: Server=db;User Id=sa;Password=${DB_PASSWORD};TrustServerCertificate=True
+    command: ["sh", "scripts/test.sh"]
+    depends_on:
+      db: {condition: service_healthy}
+  frontend:
+    image: node:22-bookworm-slim@sha256:de170b39439eb0e5a3444ad7d60b015614a381e10fecae2e30ec9e735122f38d
+    profiles: [test]
+    working_dir: /source
+    volumes: [".:/source:ro"]
+    command: ["node", "--test", "--test-reporter=tap", "tests/frontend/review.test.cjs"]
+volumes:
+  sql-data:
