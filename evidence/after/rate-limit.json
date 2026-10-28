@@ -1,0 +1,21 @@
+{
+  "run_id": "rate-limit-v101",
+  "started_at": "2026-10-28T03:58:37.948155+00:00",
+  "ended_at": "2026-10-28T03:58:38.509197+00:00",
+  "base_url": "http://localhost:8790",
+  "test": "default login limit: 10 attempts per minute",
+  "statuses": [
+    401,
+    401,
+    401,
+    401,
+    401,
+    401,
+    401,
+    401,
+    401,
+    401,
+    429
+  ],
+  "passed": true
+}
