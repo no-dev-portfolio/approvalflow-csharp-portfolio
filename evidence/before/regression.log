@@ -1,0 +1,91 @@
+  Determining projects to restore...
+  Restored /source/src/ApprovalFlow/ApprovalFlow.csproj (in 6.73 sec).
+  Restored /source/tests/ApprovalFlow.Tests/ApprovalFlow.Tests.csproj (in 6.74 sec).
+  ApprovalFlow -> /source/src/ApprovalFlow/bin/Release/net10.0/ApprovalFlow.dll
+  ApprovalFlow.Tests -> /source/tests/ApprovalFlow.Tests/bin/Release/net10.0/ApprovalFlow.Tests.dll
+Test run for /source/tests/ApprovalFlow.Tests/bin/Release/net10.0/ApprovalFlow.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:02.37]     DevelopmentInputTests.BadPayloadsAreClientErrorsInDevelopment(payload: "{}", contentType: "", expected: 415) [FAIL]
+[xUnit.net 00:00:02.42]     DevelopmentInputTests.BadPayloadsAreClientErrorsInDevelopment(payload: "{", contentType: "application/json", expected: 400) [FAIL]
+[xUnit.net 00:00:02.48]     DevelopmentInputTests.BadPayloadsAreClientErrorsInDevelopment(payload: "", contentType: "application/json", expected: 400) [FAIL]
+[xUnit.net 00:00:02.52]     ReviewRegressionTests.DatabaseRoundTripAndBothApisPreserveUtc [FAIL]
+[xUnit.net 00:00:02.52]     DevelopmentInputTests.BadPayloadsAreClientErrorsInDevelopment(payload: "{\"title\":\"x\",\"purpose\":\"x\",\"amount\":1.5}", contentType: "application/json", expected: 400) [FAIL]
+[xUnit.net 00:00:02.57]     DevelopmentInputTests.BadPayloadsAreClientErrorsInDevelopment(payload: "{\"version\":\"oops\"}", contentType: "application/json", expected: 400) [FAIL]
+  Failed DevelopmentInputTests.BadPayloadsAreClientErrorsInDevelopment(payload: "{}", contentType: "", expected: 415) [56 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: UnsupportedMediaType
+Actual:   InternalServerError
+  Stack Trace:
+     at DevelopmentInputTests.BadPayloadsAreClientErrorsInDevelopment(String payload, String contentType, Int32 expected) in /source/tests/ApprovalFlow.Tests/ReviewRegressionTests.cs:line 124
+--- End of stack trace from previous location ---
+  Failed DevelopmentInputTests.BadPayloadsAreClientErrorsInDevelopment(payload: "{", contentType: "application/json", expected: 400) [48 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: BadRequest
+Actual:   InternalServerError
+  Stack Trace:
+     at DevelopmentInputTests.BadPayloadsAreClientErrorsInDevelopment(String payload, String contentType, Int32 expected) in /source/tests/ApprovalFlow.Tests/ReviewRegressionTests.cs:line 124
+--- End of stack trace from previous location ---
+  Failed DevelopmentInputTests.BadPayloadsAreClientErrorsInDevelopment(payload: "", contentType: "application/json", expected: 400) [55 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: BadRequest
+Actual:   InternalServerError
+  Stack Trace:
+     at DevelopmentInputTests.BadPayloadsAreClientErrorsInDevelopment(String payload, String contentType, Int32 expected) in /source/tests/ApprovalFlow.Tests/ReviewRegressionTests.cs:line 124
+--- End of stack trace from previous location ---
+  Failed ReviewRegressionTests.DatabaseRoundTripAndBothApisPreserveUtc [109 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: Utc
+Actual:   Unspecified
+  Stack Trace:
+     at ReviewRegressionTests.DatabaseRoundTripAndBothApisPreserveUtc() in /source/tests/ApprovalFlow.Tests/ReviewRegressionTests.cs:line 26
+--- End of stack trace from previous location ---
+  Failed DevelopmentInputTests.BadPayloadsAreClientErrorsInDevelopment(payload: "{\"title\":\"x\",\"purpose\":\"x\",\"amount\":1.5}", contentType: "application/json", expected: 400) [42 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: BadRequest
+Actual:   InternalServerError
+  Stack Trace:
+     at DevelopmentInputTests.BadPayloadsAreClientErrorsInDevelopment(String payload, String contentType, Int32 expected) in /source/tests/ApprovalFlow.Tests/ReviewRegressionTests.cs:line 124
+--- End of stack trace from previous location ---
+  Failed DevelopmentInputTests.BadPayloadsAreClientErrorsInDevelopment(payload: "{\"version\":\"oops\"}", contentType: "application/json", expected: 400) [51 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: BadRequest
+Actual:   InternalServerError
+  Stack Trace:
+     at DevelopmentInputTests.BadPayloadsAreClientErrorsInDevelopment(String payload, String contentType, Int32 expected) in /source/tests/ApprovalFlow.Tests/ReviewRegressionTests.cs:line 124
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:02.63]     DevelopmentInputTests.BadPayloadsAreClientErrorsInDevelopment(payload: "{\"title\":\"x\",\"purpose\":\"x\",\"amount\":\"oo"···, contentType: "application/json", expected: 400) [FAIL]
+[xUnit.net 00:00:03.24]     ReviewRegressionTests.MissingVersionIsBadRequest(decision: False) [FAIL]
+[xUnit.net 00:00:03.32]     ReviewRegressionTests.MissingVersionIsBadRequest(decision: True) [FAIL]
+  Failed DevelopmentInputTests.BadPayloadsAreClientErrorsInDevelopment(payload: "{\"title\":\"x\",\"purpose\":\"x\",\"amount\":\"oo"···, contentType: "application/json", expected: 400) [59 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: BadRequest
+Actual:   InternalServerError
+  Stack Trace:
+     at DevelopmentInputTests.BadPayloadsAreClientErrorsInDevelopment(String payload, String contentType, Int32 expected) in /source/tests/ApprovalFlow.Tests/ReviewRegressionTests.cs:line 124
+--- End of stack trace from previous location ---
+  Failed ReviewRegressionTests.MissingVersionIsBadRequest(decision: False) [90 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: BadRequest
+Actual:   Conflict
+  Stack Trace:
+     at ReviewRegressionTests.MissingVersionIsBadRequest(Boolean decision) in /source/tests/ApprovalFlow.Tests/ReviewRegressionTests.cs:line 104
+--- End of stack trace from previous location ---
+  Failed ReviewRegressionTests.MissingVersionIsBadRequest(decision: True) [76 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: BadRequest
+Actual:   Conflict
+  Stack Trace:
+     at ReviewRegressionTests.MissingVersionIsBadRequest(Boolean decision) in /source/tests/ApprovalFlow.Tests/ReviewRegressionTests.cs:line 104
+--- End of stack trace from previous location ---
+Results File: /source/evidence/before/regression.trx
+
+Failed!  - Failed:     9, Passed:     7, Skipped:     0, Total:    16, Duration: 3 s - ApprovalFlow.Tests.dll (net10.0)

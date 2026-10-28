@@ -1,0 +1,69 @@
+✖ 401 resets identity and gets anonymous CSRF without reloading (3.738ms)
+✖ login always refreshes anonymous CSRF before submitting (2.647416ms)
+✖ failure to refresh CSRF prevents login submission (1.317208ms)
+✔ UTC timestamps display the actual JST time across midnight (15.789958ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 1
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 197.886125
+
+✖ failing tests:
+
+test at outputs/ApprovalFlow_CSharp_Portfolio_v1_0_1/tests/frontend/review.test.cjs:25:1
+✖ 401 resets identity and gets anonymous CSRF without reloading (3.738ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'expired-user-token'
+  - 'csrf-2'
+  
+      at TestContext.<anonymous> (/workspace/outputs/ApprovalFlow_CSharp_Portfolio_v1_0_1/tests/frontend/review.test.cjs:29:9)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'expired-user-token',
+    expected: 'csrf-2',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at outputs/ApprovalFlow_CSharp_Portfolio_v1_0_1/tests/frontend/review.test.cjs:35:1
+✖ login always refreshes anonymous CSRF before submitting (2.647416ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'expired-user-token'
+  - 'csrf-2'
+  
+      at TestContext.<anonymous> (/workspace/outputs/ApprovalFlow_CSharp_Portfolio_v1_0_1/tests/frontend/review.test.cjs:40:9)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'expired-user-token',
+    expected: 'csrf-2',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at outputs/ApprovalFlow_CSharp_Portfolio_v1_0_1/tests/frontend/review.test.cjs:43:1
+✖ failure to refresh CSRF prevents login submission (1.317208ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (/workspace/outputs/ApprovalFlow_CSharp_Portfolio_v1_0_1/tests/frontend/review.test.cjs:46:9)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

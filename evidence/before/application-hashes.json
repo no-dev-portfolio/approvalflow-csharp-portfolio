@@ -1,0 +1,10 @@
+{
+  "src/ApprovalFlow/ApprovalFlow.csproj": "fa726445cba4118bc07315fc3763a2cb8844d76b7c37e173cea05074491d5cf2",
+  "src/ApprovalFlow/Models.cs": "d5c9f2ed87e032edff49618d0765982ecd7f23099e901f07e32a110311ed4730",
+  "src/ApprovalFlow/Program.cs": "4ca4cd14931f90c6fe1c93e1dbb9a621c5dcdaf5dba8339439298433afecbae4",
+  "src/ApprovalFlow/Workflow.cs": "3f07b775f0117150333fedd609bb72505dc831ad5591bc49881beafc8978d438",
+  "src/ApprovalFlow/packages.lock.json": "b047fb2fd887b6574ca9e5528bd435c0d9f6d5595e83d19a1c75ca2e590abcfe",
+  "src/ApprovalFlow/wwwroot/app.css": "f7dbd3e16f7cd379a6da8729e0b466a29de4ba77a9394d47127bfef740b6d13c",
+  "src/ApprovalFlow/wwwroot/app.js": "a20d1c72175d88ab8a2752022a1ac25ae8a0339db05a4c4cde39bf672dda9d6c",
+  "src/ApprovalFlow/wwwroot/index.html": "62f2a73be8315c07afa67cd331ae5b5e26ae6790dbe75b565053357f1e36f88a"
+}
